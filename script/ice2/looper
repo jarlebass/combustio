@@ -1,0 +1,10 @@
+#!/bin/bash
+for i in `seq 1 3`;
+do
+  ./$1 $2$i $3
+  echo $1 $2$i $3
+done
+
+echo Finished
+
+

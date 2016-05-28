@@ -1,0 +1,7 @@
+#!/bin/bash
+./run_muddy CombustioMuddyEvalu1
+./run_sandy CombustioSandyEvalu1
+./run_muddy CombustioMuddyEvalu2
+./run_sandy CombustioSandyEvalu2
+./run_muddy CombustioMuddyEvalu3
+./run_sandy CombustioSandyEvalu3

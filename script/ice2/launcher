@@ -1,0 +1,5 @@
+#!/bin/bash
+./looper_short run_scala_evaluation  CombustioScalaEvalRecoveryOnLarge y
+./looper_recov run_scala_evaluation  CombustioScalaEvalRecoveryOnLarge y
+./looper       run_scala_evaluation  CombustioScalaRecoveryOffLarge    n
+

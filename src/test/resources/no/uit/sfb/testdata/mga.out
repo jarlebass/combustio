@@ -1,0 +1,11 @@
+# Cellulose_genome_denovo_accurate_c1
+# gc = 0.358747, rbs = -1
+# self: b
+gene_1	1	270	+	0	01	37.4191	s	-	-	-
+gene_2	652	1341	-	0	11	68.408	s	1349	1354	-0.284637
+gene_7	8114	8687	+	0	10	63.002	s	-	-	-
+# Cellulose_genome_denovo_accurate_c2
+# gc = 0.365548, rbs = -1
+# self: -
+gene_1	1	430	+	1	01	66.3785	b	-	-	-
+gene_2	477	1586	-	0	11	77.5769	b	1593	1598	-0.210196

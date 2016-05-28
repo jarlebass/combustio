@@ -1,0 +1,44 @@
+
+spark-submit \
+--master yarn-client \
+--conf spark.task.cpus=2 \
+--conf spark.yarn.am.memory=4096m \
+--conf spark.yarn.am.cores=4 \
+--conf spark.yarn.am.memoryOverhead=1024 \
+--conf spark.executor.memory=4096m \
+--conf spark.yarn.executor.memoryOverhead=1024 \
+--num-executors 27 \
+--executor-cores 4 \
+--conf spark.kryoserializer.buffer.max=256m \
+app.jar "wm" \
+-lo /state/partition1/tmp/ \
+-ho hdfs://nameservice1/user/jfa012/out/ \
+-j CombustioTestWFF \
+-l hdfs://nameservice1/user/jfa012/bio_data/left.fastq.gz \
+-r hdfs://nameservice1/user/jfa012/bio_data/right.fastq.gz \
+-u myId \
+-R n
+
+
+#--driver-memory 4096m \
+#--driver-cores 4 \
+# SPARK SPECULATION CONFIGURATION DEFAULTS (1.6.1)
+#--conf spark.speculation true \
+#--conf spark.speculation.interval  100ms \
+#--conf spark.speculation.multiplier 1.5 \
+#--conf spark.speculation.quantile 0.75 \
+
+# CORES ALLOCATED PER TASK
+#--conf spark.task.cpus 1 \
+
+
+# MISC
+#--master yarn-client \
+#--driver-memory 8192m \
+#--driver-cores 8 \
+#--conf spark.yarn.am.memory=4096m \
+#--conf spark.yarn.am.cores=4 \
+#--conf spark.yarn.am.memoryOverhead=1024 \
+#--conf spark.kryoserializer.buffer.max=64m \
+#-i hdfs://compute-0-0/user/jfa012/bio_data/ \
+#-o hdfs://compute-0-0/user/jfa012/out/

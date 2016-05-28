@@ -1,0 +1,27 @@
+spark-submit \
+--master yarn-client \
+--conf spark.task.cpus=2 \
+--conf spark.yarn.am.memory=4096m \
+--conf spark.yarn.am.cores=4 \
+--conf spark.yarn.am.memoryOverhead=1024 \
+--conf spark.executor.memory=4096m \
+--conf spark.yarn.executor.memoryOverhead=1024 \
+--num-executors 27 \
+--executor-cores 4 \
+--conf spark.kryoserializer.buffer.max=256m \
+app.jar "wm" \
+-lo /state/partition1/tmp/ \
+-ho hdfs://nameservice1/user/jfa012/out/ \
+-j $1 \
+-l hdfs://nameservice1/user/jfa012/marine_sediment/muddyCombined_S1_L001_R1_001.fastq.gz \
+-r hdfs://nameservice1/user/jfa012/marine_sediment/muddyCombined_S1_L001_R2_001.fastq.gz \
+-u myMuddy \
+-R n
+
+#--driver-memory 4096m \
+#--driver-cores 4 \
+
+#--conf spark.task.maxFailures=10 \
+#--conf spark.kryoserializer.buffer.max=64m \
+#-i hdfs://compute-0-0/user/jfa012/bio_data/ \
+#-o hdfs://compute-0-0/user/jfa012/out/

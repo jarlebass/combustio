@@ -1,0 +1,15 @@
+
+spark-submit \
+--master yarn-client \
+--conf spark.task.cpus=1 \
+--conf spark.yarn.am.memory=4096m \
+--conf spark.yarn.am.cores=4 \
+--conf spark.yarn.am.memoryOverhead=1024 \
+--conf spark.executor.memory=4096m \
+--conf spark.yarn.executor.memoryOverhead=1024 \
+--num-executors 27 \
+--executor-cores 4 \
+--conf spark.kryoserializer.buffer.max=256m \
+app.jar "sim" \
+-i hdfs://nameservice1/user/jfa012/enwiki-latest-pages-articles.xml* \
+#-i hdfs://nameservice1/user/jfa012/warc \
